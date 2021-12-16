@@ -1,0 +1,56 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul, li {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  padding: 0;
+  margin: 0;
+  color: #000000;
+  font-weight: 700;
+  line-height: 1em;
+}
+
+svg {
+  display: block;
+}
+
+input, button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+button {
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
