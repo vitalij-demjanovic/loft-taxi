@@ -1,0 +1,113 @@
+.profile {
+  background: #FFFFFF;
+  padding: 60px 43px;
+  box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 888px;
+}
+
+.profile-title {
+  text-align: center;
+  margin-bottom: 13px;
+}
+
+.profile-p {
+  margin-bottom: 51px;
+  color: #7B7B7B;
+  text-align: center;
+}
+
+.profile-form {
+  width: 355px;
+}
+
+.profile span {
+  color: #7B7B7B;
+}
+
+.profile-paydata {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 59px;
+}
+
+.form-item-span {
+  margin-bottom: 10px;
+}
+
+.expiration {
+  display: flex;
+  justify-content: space-between;
+}
+
+.expiration label {
+  width: 160px;
+}
+
+.form-item-input::placeholder,
+.form-item-input {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  padding-bottom: 11px;
+  border-bottom: 2px solid #E4E4E4;
+}
+
+.profile-card-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.profile-card-number {
+  color: #000;
+  font-weight: 700;
+  font-size: 21px;
+  margin-bottom: 35px;
+}
+
+.profile-card-head span {
+  color: #000;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.profile-card {
+  width: 347px;
+  height: 182px;
+  padding: 18px 28px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 20px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.master-card {
+  display: flex;
+}
+
+.profile-card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.master-card-div {
+  width: 28px;
+  height: 28px;
+  background: #F1F1F1;
+  border-radius: 50%;
+}
+
+.master-card-div:first-child {
+  margin-right: -10px;
+}
+
+.profile-btn {
+  display: block;
+  margin: 0 auto;
+}

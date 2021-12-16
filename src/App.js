@@ -1,11 +1,12 @@
 import React from "react";
+import LoginPage from './pages/Login/LoginPage'
 import './global.css'
 
 const App = () => {
   return (
     <div className="App">
-    Hello world!!!
-  </div>
+      <LoginPage></LoginPage>
+    </div>
   )
 }
 

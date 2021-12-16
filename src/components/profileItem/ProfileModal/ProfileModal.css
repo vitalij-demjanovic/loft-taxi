@@ -1,0 +1,17 @@
+.profile-modal {
+  background: #FFFFFF;
+  padding: 90px 114px;
+  box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 822px;
+  text-align: center;
+}
+
+.profile-modal-title {
+  margin-bottom: 13px;
+}
+
+.profile-modal-text {
+  margin-bottom: 28px;
+  color: #7B7B7B;
+}
