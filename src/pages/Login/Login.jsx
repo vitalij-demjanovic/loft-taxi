@@ -22,7 +22,7 @@ const LoginPage = (props) => {
           </label>
           <span className='login-form-span'>Забыли пароль?</span>
         </form>
-        <button onClick={() => props.logIn('navigation')} className='login-wrapper-btn global-btn'>Войти</button>
+        <button onClick={() => props.navigation('navigation')} className='login-wrapper-btn global-btn'>Войти</button>
         <div className="login-registration">
           <span className='login-registration-question'>Новый пользователь? </span>
           <span className='login-registration-link' onClick={() => props.navigation('registration')}>Регистрация</span>
@@ -32,6 +32,6 @@ const LoginPage = (props) => {
     </div>
   )
 }
- 
+
 
 export default LoginPage
