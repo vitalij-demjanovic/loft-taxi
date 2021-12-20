@@ -1,6 +1,6 @@
 import React from 'react';
-import Chip from '../../../icon/Chip'
-import MiniLogo from '../../../icon/MIniLogo'
+import Chip from '../../../assets/icon/chip.png'
+import CardLogo from '../../../assets/icon/CardLogo.png'
 import './ProfileForm.css'
 
 const ProfileForm = () => {
@@ -31,14 +31,14 @@ const ProfileForm = () => {
           </form>
           <div className="profile-card">
             <div className="profile-card-head">
-              <MiniLogo></MiniLogo>
+              <img src={CardLogo} alt="" />
               <span className='card-head-span'>05/08</span>
             </div>
             <div className='profile-card-number'>
             5545    2300    3432    4521
             </div>
             <div className="profile-card-footer">
-            <Chip></Chip>
+            <img src={Chip} alt="" />
               <div className="master-card">
                 <div className='master-card-div'></div>
                 <div className='master-card-div'></div>
