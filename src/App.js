@@ -18,7 +18,7 @@ class App extends React.Component {
       <div className="App">
         {this.state.currentPage === 'login' && <Login navigation={this.naviTogo}/>}
         {this.state.currentPage === 'registration' && <Registration navigation={this.naviTogo}/>}
-        {this.state.currentPage === 'home' && <Home/>}
+        {this.state.currentPage === 'home' && <Home logOut={this.naviTogo}/>}
       </div>
     )
   }

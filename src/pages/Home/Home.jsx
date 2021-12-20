@@ -2,7 +2,6 @@ import React from 'react';
 import Navigation from '../../components/navigation/Navigation'
 import Map from "../../components/Map/Map";
 import Profile from "../Profile/Profile";
-import Login from "../Login/Login";
 
 class Home extends React.Component {
     state = { currentPage: 'map' }
@@ -25,8 +24,6 @@ class Home extends React.Component {
                 <main>
                     {this.state.currentPage === 'map' && <Map/>}
                     {this.state.currentPage === 'profile' && <Profile/>}
-                    {this.state.currentPage === 'login' && <Login/>}
-
                 </main>
             </div>
         )

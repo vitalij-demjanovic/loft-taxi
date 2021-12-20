@@ -14,7 +14,7 @@ const Navigation = (props) => {
         <ul className="nav-list">
           <li className="nav-list-item" onClick={() => props.navigation('map')}>Карта</li>
           <li className="nav-list-item" onClick={() => props.navigation('profile')}>Профиль</li>
-          <li className="nav-list-item" onClick={() => props.navigation('login')}>Выйти</li>
+          <li className="nav-list-item" onClick={() => props.logOut('login')}>Выйти</li>
         </ul>
       </div>
     </div>
