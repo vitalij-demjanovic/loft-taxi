@@ -1,6 +1,22 @@
-.map-pages {
-  background: url(../../assets/image/Map.png);
-  width: 100%;
+.map-container {
+  position: relative;
   height: 90vh;
-  padding: 60px 0 0 68px; 
+}
+
+.map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.map-booking {
+  position: absolute;
+  top: 20px;
+  left: 29px;
+}
+
+.mapboxgl-ctrl-attrib-inner {
+  display: none;
 }

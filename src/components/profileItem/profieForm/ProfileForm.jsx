@@ -16,16 +16,16 @@ const ProfileForm = () => {
             </label>
             <label className='form-item'>
               <span className='form-item-span'>Номер карты</span>
-              <input type="tel" name="name" className='form-item-input' maxlength="19" pattern="\d*" placeholder='5545  2300  3432  4521'/>
+              <input type="tel" name="name" className='form-item-input' maxLength="19" pattern="\d*" placeholder='5545  2300  3432  4521'/>
             </label>
             <label className='expiration'>
               <label className='form-item'>
               <span className='form-item-span'>MM/YY</span>
-              <input type="tel" name="name" className='form-item-input' maxlength="5" pattern="\d*" placeholder='05/08'/>
+              <input type="tel" name="name" className='form-item-input' maxLength="5" pattern="\d*" placeholder='05/08'/>
             </label>
             <label className='form-item'>
               <span className='form-item-span'>CVC</span>
-              <input type="tel" name="name" className='form-item-input' maxlength="5" pattern="\d*" placeholder='667'/>
+              <input type="tel" name="name" className='form-item-input' maxLength="5" pattern="\d*" placeholder='667'/>
             </label>
             </label>
           </form>
@@ -40,8 +40,8 @@ const ProfileForm = () => {
             <div className="profile-card-footer">
             <img src={Chip} alt="" />
               <div className="master-card">
-                <div className='master-card-div'></div>
-                <div className='master-card-div'></div>
+                <div className='master-card-div'/>
+                <div className='master-card-div'/>
               </div>
             </div>
           </div>

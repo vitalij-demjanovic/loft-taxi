@@ -1,27 +1,40 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import Login from './pages/Login/Login'
 import './global.css'
 import Registration from "./pages/Registraion/Registration";
 import Home from "./pages/Home/Home";
+import PropTypes from "prop-types";
+import AuthContext from "./auth/AuthContext";
 
-class App extends React.Component {
-  state = { currentPage: 'home' }
+const App = () =>{
+  const [currentPage, setPage] = useState('login')
+    const context = useContext(AuthContext)
 
-  naviTogo = (page) => {
-    this.setState({
-      currentPage: page
-    })
+   const naviTogo = (page) => {
+      context.isLoggedIn ? setPage('home') : setPage('login')
+    };
+
+  const naviRegistration = (page) => {
+      setPage('registration')
   }
 
-  render() {
+  const naviLogin = (page) => {
+    setPage('login')
+  }
+
     return (
       <div className="App">
-        {this.state.currentPage === 'login' && <Login navigation={this.naviTogo}/>}
-        {this.state.currentPage === 'registration' && <Registration navigation={this.naviTogo}/>}
-        {this.state.currentPage === 'home' && <Home logOut={this.naviTogo}/>}
+          <AuthContext.Provider value={context}>
+              {currentPage === 'login' && <Login showPage={naviTogo} navigation={naviRegistration}/>}
+              {currentPage === 'registration' && <Registration navigation={naviLogin}/>}
+              {currentPage === 'home' && <Home Out={naviTogo} />}
+          </AuthContext.Provider>
       </div>
     )
-  }
 }
 
-export default App
+App.protoTypes ={
+    isLoggedIn: PropTypes.bool
+}
+
+export default  App

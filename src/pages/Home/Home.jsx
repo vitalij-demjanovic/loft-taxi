@@ -10,16 +10,13 @@ class Home extends React.Component {
         this.setState({
             currentPage: page
         })
-        if (this.state.currentPage === 'login') {
-
-        }
     }
 
     render() {
         return (
             <div className="home-page">
                 <header>
-                    <Navigation navigation={this.naviTogo}/>
+                    <Navigation Out={this.props.Out} navigation={this.naviTogo}/>
                 </header>
                 <main>
                     {this.state.currentPage === 'map' && <Map/>}
