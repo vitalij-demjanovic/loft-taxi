@@ -1,17 +1,15 @@
 import React, {useContext} from "react";
 import './Login.css'
 import HeadLogo from '../../assets/image/HeadLogo.png'
-import PropTypes from "prop-types";
-import AuthContext from "../../auth/AuthContext";
+import { logIn, AuthContext } from "../../auth/AuthContext";
+import {Link} from "react-router-dom";
 
-const LoginPage = ({navigation, showPage}) => {
-    const context = useContext(AuthContext)
-
+const LoginPage = () => {
+    const { setIsLoggedIn } = useContext(AuthContext)
     const authorization = (event) => {
         event.preventDefault()
         const { email, password } = event.target
-        context.logIn(email.value, password.value)
-        showPage()
+        setIsLoggedIn(logIn( email.value, password.value))
     }
 
      return (
@@ -36,17 +34,14 @@ const LoginPage = ({navigation, showPage}) => {
         </form>
         <div className="login-registration">
           <span className='login-registration-question'>Новый пользователь? </span>
-          <span className='login-registration-link' onClick={() => navigation('registration')}>Регистрация</span>
+            <Link to='/registration'>
+                <span className='login-registration-link'>Регистрация</span>
+            </Link>
         </div>
         </div>
         </div>
     </div>
   )
-}
-
-LoginPage.propTypes = {
-    navigation: PropTypes.func,
-    showPage: PropTypes.func
 }
 
 

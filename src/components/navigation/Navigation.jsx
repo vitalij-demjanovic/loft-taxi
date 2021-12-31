@@ -1,11 +1,15 @@
 import React, { useContext} from "react";
-import PropTypes from 'prop-types'
 import './Navigation.css'
 import NavLogo from '../../assets/image/NavLogo.png'
-import AuthContext from "../../auth/AuthContext";
+import {logOut, AuthContext} from "../../auth/AuthContext";
+import { Link } from "react-router-dom";
 
-const Navigation = ({navigation, Out}) => {
-    const context = useContext(AuthContext)
+const Navigation = () => {
+    const { setIsLoggedIn } = useContext(AuthContext)
+    const UnAuthorization = (event) => {
+        event.preventDefault()
+        setIsLoggedIn(logOut)
+    }
     return (
       <>
     <div className="navigation">
@@ -14,19 +18,14 @@ const Navigation = ({navigation, Out}) => {
           <img src={NavLogo} alt="logo" />
         </div>
         <ul className="nav-list">
-          <li className="nav-list-item" onClick={() => navigation('map')}>Карта</li>
-          <li className="nav-list-item" onClick={() => navigation('profile')}>Профиль</li>
-          <li className="nav-list-item" onClick={() => Out(context.logOut())}>Выйти</li>
+          <li className="nav-list-item"> <Link to='/map' >Карта</Link></li>
+          <li className="nav-list-item"><Link to='/profile' >Профиль</Link></li>
+          <li className="nav-list-item" onClick={UnAuthorization}>Выйти</li>
         </ul>
       </div>
     </div>
     </>
     );
-}
-
-Navigation.propTypes = {
-    navigation: PropTypes.func,
-    Out: PropTypes.func
 }
 
 export default Navigation

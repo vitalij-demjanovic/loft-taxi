@@ -1,13 +1,18 @@
 import React from "react";
 import './Profile.css'
 import ProfileFomr from '../../components/profileItem/profieForm/ProfileForm'
+import Navigation from "../../components/navigation/Navigation";
 
 
 const ProfilePage = () => {
   return(
-    <div className="profiele-page">
-        <ProfileFomr/>
-    </div>
+      <>
+          <Navigation/>
+          <div className="profile-page">
+            <ProfileFomr/>
+          </div>
+      </>
+
   )
 }
 

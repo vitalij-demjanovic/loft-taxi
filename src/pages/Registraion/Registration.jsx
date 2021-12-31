@@ -1,6 +1,7 @@
 import React from "react";
 import './Registration.css'
 import HeadLogo from '../../assets/image/HeadLogo.png'
+import {Link} from "react-router-dom";
 
 const Registration = (props) => {
      return (
@@ -28,13 +29,15 @@ const Registration = (props) => {
         <button className='registration-wrapper-btn global-btn'>Зарегистрироваться</button>
         <div className="registration-footer">
           <span className='registration-footer-question'>Уже зарегестрированны? </span>
-          <span className='registration-footer-link' onClick={() => props.navigation('login')}>Войти</span>
+            <Link to='/login'>
+                <span className='registration-footer-link' >Войти</span>
+            </Link>
         </div>
         </div>
       </div>
     </div>
   )
 }
- 
+
 
 export default Registration

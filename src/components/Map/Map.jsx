@@ -2,6 +2,7 @@ import React from "react";
 import mapboxgl from 'mapbox-gl'
 import './Map.css'
 import Booking from "../mapComponent/Booking/Booking";
+import Navigation from "../navigation/Navigation";
 
 class Map extends React.Component {
     map = null
@@ -24,12 +25,16 @@ class Map extends React.Component {
 
     render() {
         return (
-            <div className='map-container'>
-                <div className="map" ref={this.mapContainer}/>
-                <div className="map-booking">
-                    <Booking/>
+            <>
+                <Navigation/>
+                <div className='map-container'>
+                    <Navigation/>
+                    <div className="map" ref={this.mapContainer}/>
+                    <div className="map-booking">
+                        <Booking/>
+                    </div>
                 </div>
-            </div>
+            </>
         );
     }
 }
