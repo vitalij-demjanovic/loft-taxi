@@ -1,0 +1,78 @@
+.login-page {
+  display: flex;
+  background: #000;
+}
+
+.login-logo {
+  margin: auto 0;
+  padding: 0 175px;
+}
+
+.login {
+  background: url(../../assets/image/Map.png);
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* form */
+
+.login-wrapper {
+  padding: 56px 112px;
+  background-color: #fff;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  width: 580px;
+}
+
+.login-wrapper-title {
+  margin-bottom: 57px;
+  text-align: center;
+}
+
+.login-form-span {
+  margin-bottom: 46px;
+}
+
+.login-form-email,
+.login-form-password {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  padding-bottom: 11px;
+  border-bottom: 2px solid #E4E4E4;
+}
+
+
+.login-form-password_span,
+.login-form-email_span {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.login-form-span {
+  font-size: 16px;
+  color: #828282;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-wrapper-btn {
+  margin-bottom: 33px;
+}
+
+.login-registration {
+  font-size: 16px;
+  text-align: center;
+}
+
+.login-registration-question {
+  color: #828282;
+}
+
+.login-registration-link {
+  color: #FDBF5A;
+  cursor: pointer;
+}

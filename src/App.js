@@ -1,13 +1,13 @@
 import React from "react";
-import LoginPage from './pages/Login/LoginPage'
 import './global.css'
+import AppRoute from "./components/AppRouter/AppRoute";
 
-const App = () => {
-  return (
-    <div className="App">
-      <LoginPage></LoginPage>
-    </div>
-  )
+const App = () =>{
+    return (
+      <div className="App">
+              <AppRoute/>
+      </div>
+    )
 }
 
-export default App
+export default  App
