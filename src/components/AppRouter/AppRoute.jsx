@@ -1,12 +1,12 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {PrivateRoute, PublicRoute} from "../../router";
 import {Redirect, Route, Switch} from "react-router-dom";
-import AuthContext from "../../auth/AuthContext";
+import {connect} from "react-redux";
 
-const AppRoute = () => {
-    const { isLoggedIn } = useContext(AuthContext)
+const AppRoute = (props) => {
+
     return (
-        isLoggedIn
+        props.isLoggedIn
         ?
             <Switch>
                 {PrivateRoute.map((route, index) =>
@@ -35,4 +35,6 @@ const AppRoute = () => {
     );
 };
 
-export default AppRoute
+export default connect(
+    (state) => ({isLoggedIn: state.auth.isLoggedIn})
+)(AppRoute)

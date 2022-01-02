@@ -1,14 +1,14 @@
-import React, { useContext} from "react";
+import React from "react";
 import './Navigation.css'
 import NavLogo from '../../assets/image/NavLogo.png'
-import {logOut, AuthContext} from "../../auth/AuthContext";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import {logOut} from "../../store/actions";
 
-const Navigation = () => {
-    const { setIsLoggedIn } = useContext(AuthContext)
+const Navigation = (props) => {
     const UnAuthorization = (event) => {
         event.preventDefault()
-        setIsLoggedIn(logOut)
+        props.logOut()
     }
     return (
       <>
@@ -28,4 +28,7 @@ const Navigation = () => {
     );
 }
 
-export default Navigation
+export default connect(
+    null,
+    {logOut}
+)(Navigation)

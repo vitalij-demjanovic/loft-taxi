@@ -54,6 +54,10 @@
   font-weight: 700;
 }
 
+.registration-form-name {
+  display: flex;
+}
+
 .registration-form-span {
   font-size: 16px;
   color: #828282;

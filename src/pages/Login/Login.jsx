@@ -1,15 +1,16 @@
-import React, {useContext} from "react";
+import React from "react"
 import './Login.css'
+import { connect } from "react-redux";
 import HeadLogo from '../../assets/image/HeadLogo.png'
-import { logIn, AuthContext } from "../../auth/AuthContext";
 import {Link} from "react-router-dom";
+import {authenticate} from "../../store/actions";
 
-const LoginPage = () => {
-    const { setIsLoggedIn } = useContext(AuthContext)
+const LoginPage = (props) => {
+
     const authorization = (event) => {
         event.preventDefault()
         const { email, password } = event.target
-        setIsLoggedIn(logIn( email.value, password.value))
+        props.authenticate(email.value, password.value)
     }
 
      return (
@@ -45,4 +46,7 @@ const LoginPage = () => {
 }
 
 
-export default LoginPage
+export default connect(
+    (state) => ({isLoggedIn: state.auth.isLoggedIn}),
+{authenticate}
+)(LoginPage)
