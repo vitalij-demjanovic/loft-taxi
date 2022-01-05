@@ -9,6 +9,7 @@ const Navigation = (props) => {
     const UnAuthorization = (event) => {
         event.preventDefault()
         props.logOut()
+        localStorage.clear()
     }
     return (
       <>

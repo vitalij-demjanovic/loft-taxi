@@ -7,12 +7,11 @@ import {registration} from "../../store/actions";
 
 const Registration = (props) => {
 
-    const Registration = (event) => {
+    const addRegistration = (event) => {
         event.preventDefault()
         const { email, password, name, surname } = event.target
         props.registration(email.value, password.value, name.value, surname.value)
     }
-
      return (
     <div className="registration-page">
       <div className="registration-logo">
@@ -21,7 +20,7 @@ const Registration = (props) => {
       <div className="registration">
         <div className="registration-wrapper">
           <h2 className='registration-wrapper-title'>Регистрация</h2>
-          <form className='registration-form' onSubmit={Registration}>
+          <form className='registration-form' onSubmit={addRegistration}>
           <label className='registration-form-email'>
             <span className='registration-form-email_span'>Email*</span>
             <input name="email" type="email" placeholder='mail@mail.ru'/>
@@ -51,6 +50,6 @@ const Registration = (props) => {
 
 
 export default connect(
-null,
+    null,
     {registration}
 )(Registration)
