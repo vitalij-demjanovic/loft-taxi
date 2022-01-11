@@ -48,5 +48,5 @@ const LoginPage = (props) => {
 
 export default connect(
     (state) => ({isLoggedIn: state.auth.isLoggedIn}),
-{authenticate}
+{ authenticate }
 )(LoginPage)
