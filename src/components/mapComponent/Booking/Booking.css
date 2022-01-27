@@ -7,18 +7,77 @@
 }
 
 .booking-setting {
-  padding: 0 25px 22px;
+  padding: 0 20px;
   border-bottom: 1px solid #E0E0E0;
-  display: flex; 
+  display: flex;
   flex-direction: column;
 }
 
-.start-point input {
-  padding-bottom: 12px;
-  margin-bottom: 12px;
-  border-bottom: 1px solid #E0E0E0;
-  width: 100%;
+.start-point {
+  border-bottom: 1px solid #c5c5c5;
 }
+
+.list-arrow {
+  width: 16px;
+  height: 10px;
+  color: black;
+  cursor: pointer;
+}
+
+.list-arrow.start,
+.list-arrow.end {
+  transform: rotate(180deg);
+}
+
+
+.start-point,
+.end-point {
+  width: 100%;
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-list-start,
+.dropdown-list-end {
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  display: none;
+  padding: 20px;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.dropdown-list-start.start,
+.dropdown-list-end.end {
+  display: block;
+  animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.list-item {
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.list-item:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*service*/
 
 .type-service {
   display: flex;
@@ -32,8 +91,16 @@
   box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   width: 118px;
+  opacity: 0.6;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+
+.service.active,
+.service:hover {
+  opacity: 1;
 }
 
 .service-name {

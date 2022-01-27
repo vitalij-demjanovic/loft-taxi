@@ -4,10 +4,12 @@ export const AUTHENTICATE = 'AUTHENTICATE'
 export const REGISTRATION = 'REGISTRATION'
 export const CARDSAVE = 'CARDSAVE'
 export const DONECARD = 'DONECARD'
+export const ADDRESSLIST = 'ADDRESSLIST'
 
 export const logIn = () => ({type: LOG_IN})
 export const logOut = () => ({type: LOG_OUT})
 export const doneCard = () => ({type: DONECARD})
+export const addresslist = () => ({type: ADDRESSLIST})
 export const authenticate = (email, password) => ({
     type: AUTHENTICATE,
     payload: { email, password }
