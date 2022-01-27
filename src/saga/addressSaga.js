@@ -4,9 +4,7 @@ import { serverAddressList } from "../api/api";
 
 export function* callAddressSaga() {
    const list = yield call(serverAddressList)
-    if (list) {
-        yield put({type:ADDRESSLIST, label: list})
-    }
+    yield put({type:ADDRESSLIST, label: list})
 }
 
 export function* AddressSag () {

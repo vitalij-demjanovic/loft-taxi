@@ -44,9 +44,9 @@
 .dropdown-list-end {
   position: absolute;
   background-color: #ffffff;
-  border: 1px solid #000000;
+  border: 1px solid #c4bfbf;
   display: none;
-  padding: 20px;
+  /*padding: 20px;*/
   top: 100%;
   left: 0;
   right: 0;
@@ -61,7 +61,12 @@
 
 .list-item {
   color: #000000;
-  margin-bottom: 10px;
+  padding: 10px;
+  transition: all 0.5s ease;
+}
+
+.list-item:hover {
+  background-color: #c4bfbf;
 }
 
 .list-item:last-child {
