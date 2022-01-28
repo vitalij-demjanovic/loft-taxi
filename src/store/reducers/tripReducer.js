@@ -1,16 +1,15 @@
-import { ADDRESSLIST_SUCCES } from "../actions";
+import {BOOK_TRIP} from '../actions'
 
 const initialSate = {
-    label: []
+    trip: []
 }
-
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (state = initialSate, action) {
     switch (action.type) {
-        case ADDRESSLIST_SUCCES: {
-            return { label: action.payload }
+        case BOOK_TRIP: {
+            return { trip: action.payload }
         }
         default:
-            return state
+            return  state
     }
 }

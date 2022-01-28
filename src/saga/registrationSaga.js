@@ -8,5 +8,5 @@ export function* registrationSaveSaga(action) {
 }
 
 export function* registrationSaga() {
-    yield takeEvery(REGISTRATION, registrationSaga)
+    yield takeEvery(REGISTRATION, registrationSaveSaga)
 }

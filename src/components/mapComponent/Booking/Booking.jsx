@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {useEffect, useState} from 'react';
 import classNames from "classnames";
 import styles from './Booking.css'
 import standart from '../../../assets/image/standart.png'
@@ -6,7 +7,7 @@ import premium from '../../../assets/image/premium.png'
 import biznis from '../../../assets/image/biznis.png'
 import arrow from '../../../assets/icon/arrow.svg'
 import { connect } from "react-redux";
-import {addresslist} from "../../../store/actions";
+import {addresslist, bookTrip} from "../../../store/actions";
 import {serverRoute} from "../../../api/api";
 
 const cx = classNames.bind(styles);
@@ -17,15 +18,20 @@ const Booking = (props) => {
     const [car, SetCar] = useState('car1')
     const [valueStart, SetValueStart] = useState('Start')
     const [valueEnd, SetValueEnd] = useState('End')
+
     const route = () => {
         if(valueStart !== 'Start' && valueEnd !== 'End') {
-            serverRoute(valueStart, valueEnd)
+            props.bookTrip(valueStart, valueEnd)
         } else {
             console.log('Select Route')
         }
     }
 
-    const mass = ["Пулково (LED)","Эрмитаж","Кинотеатр Аврора","Мариинский театр"]
+    useEffect(() => {
+        props.addresslist()
+    }, [])
+
+    const mass = props.label || []
 
     return (
         <div className='booking-wrapper'>
@@ -106,5 +112,5 @@ const Booking = (props) => {
 
 export default connect(
     (state) => ({label: state.address.label}),
-    {addresslist}
+    {addresslist, bookTrip}
 )(Booking);
