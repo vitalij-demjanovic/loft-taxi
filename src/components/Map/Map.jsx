@@ -59,6 +59,7 @@ class Map extends React.Component {
     };
 
     componentDidUpdate() {
+        if (this.props.trip.length !== 0)
             this.drawRoute(this.map, this.props.trip);
     }
 
