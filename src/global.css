@@ -68,3 +68,42 @@ a {
 .global-btn a {
   color: #000000;
 }
+
+/*Response*/
+
+/* Large: 992px - 1199px */
+@media (max-width: 1199px) {
+  .n-container {
+    max-width: 960px;
+  }
+}
+
+/* Medium: 768px - 991px */
+@media (max-width: 991px) {
+  .n-container {
+    max-width: 720px;
+  }
+}
+
+/* Small: 576px - 767px */
+@media (max-width: 767px) {
+  .n-container {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 460px) {
+  .n-container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+
+
+/* Extra small: 0px (320px) - 575px */
+@media (max-width: 575px) {
+  .n-container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}

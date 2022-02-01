@@ -1,8 +1,10 @@
-import React from "react";
+import React  from "react";
 import mapboxgl from 'mapbox-gl'
 import './Map.css'
+import {connect} from "react-redux";
 import Booking from "../mapComponent/Booking/Booking";
 import Navigation from "../navigation/Navigation";
+import Confirmation from "../mapComponent/confirmation/Confirmation";
 
 class Map extends React.Component {
     map = null
@@ -14,10 +16,12 @@ class Map extends React.Component {
         this.map = new mapboxgl.Map({
             container: this.mapContainer.current,
             style: 'mapbox://styles/mapbox/light-v10',
-            center: [37.61811564003847, 55.743017084632726],
+            center: [30.308611, 59.937500],
             zoom: 12
         })
+
     }
+
 
     componentWillUnmount() {
         this.map.remove()
@@ -54,6 +58,11 @@ class Map extends React.Component {
         });
     };
 
+    componentDidUpdate() {
+            this.drawRoute(this.map, this.props.trip);
+    }
+
+
     render() {
         return (
             <>
@@ -62,7 +71,13 @@ class Map extends React.Component {
                     <Navigation/>
                     <div className="map" ref={this.mapContainer}/>
                     <div className="map-booking">
-                        <Booking/>
+                        {this.props.successTrip
+                        ?
+                            <Confirmation/>
+                        :
+                            <Booking/>
+
+                        }
                     </div>
                 </div>
             </>
@@ -70,7 +85,10 @@ class Map extends React.Component {
     }
 }
 
-export default Map
+export default connect((state) => ({
+    trip:state.trip.trip,
+    successTrip: state.trip.successTrip
+}))(Map)
 
 
 

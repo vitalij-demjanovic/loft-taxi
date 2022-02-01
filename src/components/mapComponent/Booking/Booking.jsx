@@ -8,7 +8,6 @@ import biznis from '../../../assets/image/biznis.png'
 import arrow from '../../../assets/icon/arrow.svg'
 import { connect } from "react-redux";
 import {addresslist, bookTrip} from "../../../store/actions";
-import {serverRoute} from "../../../api/api";
 
 const cx = classNames.bind(styles);
 
@@ -28,7 +27,9 @@ const Booking = (props) => {
     }
 
     useEffect(() => {
-        props.addresslist()
+        if(mass.length === 0) {
+            props.addresslist()
+        }
     }, [])
 
     const mass = props.label || []
@@ -42,7 +43,7 @@ const Booking = (props) => {
                       {mass.map((item, index) => (
                           <li className='list-item'
                               key={index}
-                              onClick={(e) => {
+                              onClick={() => {
                               SetValueStart(item);
                               SetStart(false);
                           }}>
@@ -111,6 +112,9 @@ const Booking = (props) => {
 };
 
 export default connect(
-    (state) => ({label: state.address.label}),
+    (state) => ({
+        label: state.address.label,
+        trip:state.trip.trip
+    }),
     {addresslist, bookTrip}
 )(Booking);
