@@ -7,7 +7,7 @@ export const authMiddleware = (store) => (next) => async (action) => {
         let { email, password} = action.payload
         const success = await serverLogin(email, password)
         const token = success.token
-        if (success) {
+        if (success.success === true) {
             store.dispatch(logIn())
             store.dispatch({ type: LOG_IN, token: token })
             localStorage.setItem('token', token)

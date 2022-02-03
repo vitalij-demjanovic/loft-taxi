@@ -18,7 +18,7 @@ export const serverRegistration = async (email, password, name, surname) => {
             body: JSON.stringify({email, password, name, surname})
         }
     ).then(res => res.json())
-        .then(data => data)
+        .then(data => console.log(data))
         .catch(err => {
         throw new Error(err)
     })
@@ -47,4 +47,19 @@ export const InfoCard = async (token) => {
         .catch(err => {
             throw new Error(err)
         })
+}
+
+
+export const serverAddressList = async () => {
+    return fetch (
+        `https://loft-taxi.glitch.me/addressList`
+    ).then(res => res.json())
+        .then(data => data)
+}
+
+export const serverRoute = async (address1, address2) => {
+    return fetch (
+        `https://loft-taxi.glitch.me/route?address1=${address1}&address2=${address2}`
+    ).then(res => res.json())
+        .then(data => data)
 }
