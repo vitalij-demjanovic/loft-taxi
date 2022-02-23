@@ -27,9 +27,7 @@ const Booking = (props) => {
     }
 
     useEffect(() => {
-        if(mass.length === 0) {
-            props.addresslist()
-        }
+        props.addresslist()
     }, [])
 
     const mass = props.label || []

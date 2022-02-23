@@ -76,3 +76,58 @@
   color: #FDBF5A;
   cursor: pointer;
 }
+
+/*Response*/
+
+/* Large: 992px - 1199px */
+@media (max-width: 1199px) {
+  .login-logo {
+    padding: 0 75px;
+    transition: all 0.5s ease;
+  }
+}
+
+
+@media (max-width: 991px) {
+  .login-logo {
+    margin: 0 auto;
+    padding: 50px 0;
+  }
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login {
+    height: 70vh;
+  }
+
+  .login-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 56px 86px;
+  }
+
+  .global-btn {
+    display: block;
+    margin: auto auto 33px;
+    max-width: 100%;
+  }
+}
+
+/* Small: 576px - 767px */
+@media (max-width: 767px) {
+  .login {
+    height: 30vh;
+  }
+
+}
+
+@media (max-width: 460px) {
+
+}
+
+
+/* Extra small: 0px (320px) - 575px */
+@media (max-width: 575px) {
+
+}
